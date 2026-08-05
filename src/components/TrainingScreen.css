@@ -1,0 +1,247 @@
+.training-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.training-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 700px;
+  width: 100%;
+}
+
+.progress-container {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.progress-bar {
+  height: 8px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+  transition: width 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.progress-text {
+  text-align: center;
+  color: #999;
+  font-size: 0.9em;
+}
+
+.display-area {
+  background: #f8f9ff;
+  border: 3px solid #e0e7ff;
+  border-radius: 12px;
+  padding: 40px;
+  margin: 30px 0;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+.text-display pre {
+  font-family: 'Courier New', monospace;
+  font-size: 1.5em;
+  color: #333;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.waiting-display {
+  color: #999;
+  font-size: 1.1em;
+  text-align: center;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.score-area {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.1em;
+  color: #555;
+}
+
+.score-area span {
+  font-weight: 600;
+  color: #667eea;
+  font-size: 1.3em;
+}
+
+.answer-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.answer-button {
+  padding: 15px;
+  border: 2px solid #ddd;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: #555;
+}
+
+.answer-button:hover:not(:disabled) {
+  border-color: #667eea;
+  color: #667eea;
+  transform: translateY(-2px);
+}
+
+.answer-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.answer-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.answered-display {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.answered-text {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #667eea;
+}
+
+.answered-display .answered-text::before {
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.next-button {
+  padding: 15px 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.next-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.back-button,
+.back-button-small {
+  padding: 12px 24px;
+  background: #f0f0f0;
+  color: #666;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover,
+.back-button-small:hover {
+  background: #e0e0e0;
+  border-color: #999;
+}
+
+.back-button-small {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* 結果画面 */
+.results-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.results-card h2 {
+  color: #667eea;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+.score-display {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.score-text {
+  font-size: 1.1em;
+  opacity: 0.9;
+}
+
+.score-value {
+  font-size: 3em;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.accuracy {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.results-card .button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.restart-button {
+  padding: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.restart-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
